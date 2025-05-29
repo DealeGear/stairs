@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projetos Pessoais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #43a047;
+      --primary-light: #e8f5e9;
+      --bg: #f8fafc;
+      --card-bg: #fff;
+      --shadow: 0 4px 16px rgba(60,60,60,0.07);
+      --radius: 12px;
+      --transition: 0.18s cubic-bezier(.4,0,.2,1);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: var(--bg);
+      color: #222;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 2rem 1rem 1.2rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(67,160,71,0.10);
+      letter-spacing: 1px;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 600;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      margin-bottom: 1.5em;
+      background: var(--primary-light);
+      border-radius: var(--radius);
+      padding: 0.5em 1em;
+    }
+    .search-bar i {
+      color: var(--primary);
+      font-size: 1.2em;
+    }
+    input[type="text"] {
+      border: none;
+      background: transparent;
+      width: 100%;
+      font-size: 1.1em;
+      padding: 0.5em 0;
+      outline: none;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.2em;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.2em 1em;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #f0f0f0;
+      min-height: 110px;
+    }
+    .card:hover {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 8px 24px rgba(67,160,71,0.13);
+      border-color: var(--primary-light);
+    }
+    .cat-icon {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      color: var(--primary);
+    }
+    .hidden { display: none; }
+    .project-img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-bottom: 1em;
+      box-shadow: 0 2px 8px rgba(60,60,60,0.07);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1.5em;
+      padding: 0.7em 1.4em;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1em;
+      transition: background 0.12s;
+      box-shadow: 0 2px 8px rgba(67,160,71,0.07);
+    }
+    .btn:hover {
+      background: #388e3c;
+    }
+    audio {
+      width: 100%;
+      margin-top: 1.2em;
+      border-radius: 8px;
+      background: #f0f0f0;
+    }
+    .fav {
+      float: right;
+      font-size: 2em;
+      cursor: pointer;
+      color: #ddd;
+      transition: color 0.2s;
+      margin-left: 0.5em;
+      position: relative;
+    }
+    .fav.active {
+      color: gold;
+      text-shadow: 0 1px 6px #fae16f70;
+    }
+    .fav[title]:hover::after {
+      content: attr(title);
+      position: absolute;
+      left: 110%;
+      top: 0;
+      background: #222;
+      color: #fff;
+      padding: 0.2em 0.6em;
+      border-radius: 5px;
+      font-size: 0.85em;
+      white-space: nowrap;
+      opacity: 0.95;
+      z-index: 2;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0.5em; }
+      .grid { gap: 0.7em; }
+      .card { padding: 0.9em 0.5em; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Projetos Pessoais</h1>
+</header>
+
+<div class="container">
+  <div class="search-bar">
+    <i class="fa fa-search"></i>
+    <input type="text" id="searchInput" placeholder="Buscar projetos ou categorias...">
+  </div>
+  <div id="categories" class="grid"></div>
+  <div id="projects" class="grid hidden"></div>
+  <div id="details" class="hidden">
+    <span id="favBtn" class="fav" title="Favoritar">&#9733;</span>
+    <img id="projectImage" class="project-img" src="" alt="Imagem do Projeto">
+    <h2 id="projectTitle"></h2>
+    <p id="projectDescription"></p>
+    <audio id="projectAudio" controls></audio>
+    <button class="btn" onclick="goBack()"><i class="fa fa-arrow-left"></i> Voltar</button>
+  </div>
+</div>
+
+<script>
+  // Ícones para cada categoria (FontAwesome)
+  const catIcons = {
+    "Desenvolvimento Pessoal": "fa-user-astronaut",
+    "Educação": "fa-book-open",
+    "Carreira": "fa-briefcase",
+    "Criatividade": "fa-lightbulb",
+    "Saúde": "fa-heartbeat",
+    "Viagens": "fa-plane-departure",
+    "Estilo de Vida": "fa-leaf",
+    "Comunicação": "fa-comments",
+    "Espiritualidade": "fa-spa"
+  };
+
+  const categories = Object.keys(catIcons);
+
+  const projects = {
+    "Desenvolvimento Pessoal": [
+      { title: "Desafio de Gratidão", img: "https://via.placeholder.com/300", desc: "Um desafio de 30 dias.", audio: "audio1.mp3" }
+    ],
+    "Educação": [
+      { title: "Resumo de Livros", img: "https://via.placeholder.com/300", desc: "Crie resumos.", audio: "audio2.mp3" }
+    ],
+    "Carreira": [
+      { title: "Plano de Carreira", img: "https://via.placeholder.com/300", desc: "Estruture sua trajetória.", audio: "audio3.mp3" }
+    ]
+    // Adicione mais conforme quiser.
+  };
+
+  const favs = JSON.parse(localStorage.getItem('favs')) || [];
+
+  const catContainer = document.getElementById('categories');
+  const projContainer = document.getElementById('projects');
+  const detailsContainer = document.getElementById('details');
+  const favBtn = document.getElementById('favBtn');
+  const searchInput = document.getElementById('searchInput');
+
+  let currentProj = null;
+
+  function renderCategories(filteredCats = categories) {
+    catContainer.innerHTML = '';
+    filteredCats.forEach(cat => {
+      const div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `<i class="fa ${catIcons[cat]} cat-icon"></i>${cat}`;
+      div.onclick = () => showProjects(cat);
+      catContainer.appendChild(div);
+    });
+  }
+  renderCategories();
+
+  function showProjects(category) {
+    catContainer.classList.add('hidden');
+    projContainer.innerHTML = '';
+    projContainer.classList.remove('hidden');
+    (projects[category] || []).forEach(proj => {
+      const div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `<i class="fa fa-folder-open cat-icon" style="font-size:1.5em;"></i>${proj.title}`;
+      div.onclick = () => showDetails(proj);
+      projContainer.appendChild(div);
+    });
+  }
+
+  function showDetails(proj) {
+    currentProj = proj;
+    projContainer.classList.add('hidden');
+    detailsContainer.classList.remove('hidden');
+    document.getElementById('projectImage').src = proj.img;
+    document.getElementById('projectTitle').innerText = proj.title;
+    document.getElementById('projectDescription').innerText = proj.desc;
+    document.getElementById('projectAudio').src = proj.audio;
+    updateFav();
+  }
+
+  function goBack() {
+    detailsContainer.classList.add('hidden');
+    projContainer.classList.add('hidden');
+    catContainer.classList.remove('hidden');
+  }
+
+  favBtn.onclick = () => {
+    const idx = favs.findIndex(f => f.title === currentProj.title);
+    if (idx > -1) {
+      favs.splice(idx, 1);
+    } else {
+      favs.push(currentProj);
+    }
+    localStorage.setItem('favs', JSON.stringify(favs));
+    updateFav();
+  };
+
+  function updateFav() {
+    if (favs.find(f => f.title === currentProj.title)) {
+      favBtn.classList.add('active');
+      favBtn.title = "Remover dos favoritos";
+    } else {
+      favBtn.classList.remove('active');
+      favBtn.title = "Favoritar";
+    }
+  }
+
+  searchInput.addEventListener('input', function() {
+    const val = this.value.toLowerCase();
+    // Filtra categorias e projetos
+    const filteredCats = categories.filter(cat => cat.toLowerCase().includes(val));
+    renderCategories(filteredCats);
+    if (!val) {
+      catContainer.classList.remove('hidden');
+      projContainer.classList.add('hidden');
+      detailsContainer.classList.add('hidden');
+    }
+  });
+</script>
+
+</body>
+</html>
