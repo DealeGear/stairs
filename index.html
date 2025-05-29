@@ -1,121 +1,61 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stitch Design</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800"
     />
-
-    <title>Stitch Design</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
   <body>
     <div
-      class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden"
+      class="relative flex min-h-screen flex-col bg-white justify-between overflow-x-hidden"
       style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'
     >
-      <div>
-        <div class="flex items-center bg-white p-4 pb-2 justify-between">
-          <h2 class="text-[#181111] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pl-12">Stairs</h2>
-          <div class="flex w-12 items-center justify-end">
-            <button
-              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-[#181111] gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0"
-            >
-              <div class="text-[#181111]" data-icon="Plus" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
-                </svg>
-              </div>
-            </button>
-          </div>
+      <div class="max-w-screen-xl mx-auto w-full">
+        <!-- Header -->
+        <div class="flex items-center bg-white px-4 py-3 justify-between">
+          <h2 class="text-[#181111] text-lg font-bold leading-tight tracking-[-0.015em] text-center flex-1">
+            Stairs
+          </h2>
+          <button
+            class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-transparent text-[#181111]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+            </svg>
+          </button>
         </div>
-        <div class="@container">
-          <div class="@[480px]:px-4 @[480px]:py-3">
-            <div
-              class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-white @[480px]:rounded-xl min-h-[218px]"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVTAH_WtNI45vMAPyOTK8lAWCGN5gLyRtvg92OXONMgvA3TVIdrfmqhN5bwrHz_lHCOv63n9zS_MLlfjj22HJxMax0T_YrXtbiaPtLQS8pRKXWAdjMf-AzMmwSEOvuMmhXB64bGKwnmcR0LEnJatUXjcckR5m7I7iKj1Ilk7_Krsxux92goQbYemUnma3FqHh4iLFgVDqESKy9o5mLHuRF2lcu7MgKFS0xQIH5RJ2w63lhIB2YeEh9ncIvL4-GLDTzcHxLCk9lIw");'
-            ></div>
-          </div>
+
+        <!-- Image Banner -->
+        <div class="px-4 py-3">
+          <div
+            class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl aspect-[16/9] sm:aspect-[3/1]"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVTAH_WtNI45vMAPyOTK8lAWCGN5gLyRtvg92OXONMgvA3TVIdrfmqhN5bwrHz_lHCOv63n9zS_MLlfjj22HJxMax0T_YrXtbiaPtLQS8pRKXWAdjMf-AzMmwSEOvuMmhXB64bGKwnmcR0LEnJatUXjcckR5m7I7iKj1Ilk7_Krsxux92goQbYemUnma3FqHh4iLFgVDqESKy9o5mLHuRF2lcu7MgKFS0xQIH5RJ2w63lhIB2YeEh9ncIvL4-GLDTzcHxLCk9lIw");'
+          ></div>
         </div>
-        <h2 class="text-[#181111] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Categorias</h2>
-        <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-          <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dcdc] bg-white p-4 items-center">
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDw9ywUxvE1oXi1SRyDpyhsGXOtmRdX_1TLALPvWTq_MJ4FspgiPktgrX6QaeFp_FeD3Npaz6XcH-Auh5Xhq2-ZH56jdQPKU9oPa8jRNIGZBW5rECYq3qsQgUUbh9_rfPerjrv6GL5udwkluB8Mb1XJm-AsVrTof63njla9V5JJOOEcPBh2pilfG0GOp-NRBNUxnBt3Hi0vks5vVXCOTbJLdhlJtiFRgQNJT0vYRzgdoQeppvBBHMfGqO9rwqQOub_HOVOgJTobNQ");'
-            ></div>
-            <h2 class="text-[#181111] text-base font-bold leading-tight">Personal Growth</h2>
-          </div>
-          <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dcdc] bg-white p-4 items-center">
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAjnS6h5EcK1X2lgqvO7ukGEIOAXsjnIjaw6er9S3IwC1dfgeIAMUnEopWdDgnaZa0MX2Mr17xQ7TOmQTOafv6mlxFSjQI8pd4HomNIgUHlJ_2-i2pFgvgqPqUvCYTMKJWG-LZsPJDXJ3UZ1MJyd8dtQjgfNM6Ch6nU8qs2VCpA-C5PQnEPVqanVBju1w7SJLa1bmehJm3_S3wzAlUghxrxDDsyOAMsS9aDq3QEMBiXAvJk4yGSi_JeRPLtDCTI3IH0u4PY3slbrw");'
-            ></div>
-            <h2 class="text-[#181111] text-base font-bold leading-tight">Education</h2>
-          </div>
-          <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dcdc] bg-white p-4 items-center">
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAIbkxYMV0W_M0-CDqIG1YksYPoVjRfVS_-QpZZ-apfEEXf9TlsnnX4PCs7PUF7MzaeZnQFRzyAxl5UgRsld6YO4S4hAKQN9085uZ1ZUyx5pCdaFe4RxpCnrb3xlyjYbooRZ6MhSZFsywM2P6eqyE9VTDSCnPjqpnykoQBLdMSISdF24IEXo7MOt0wilbvUOl89x7TF_QrHQmLTje9alZd9N7ZuAlECbkKfRIYOR82EAD7JVScDljYvhKGoPSaSC6Y-FxsgJMrrrA");'
-            ></div>
-            <h2 class="text-[#181111] text-base font-bold leading-tight">Career</h2>
-          </div>
-          <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dcdc] bg-white p-4 items-center">
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDc7TYytLyQAfwVS04LhcNk8L51KfnHix0eCH6YPxwjexjOhXWmwH1XcZ6W7qblJQ37VcSS5RXHlddR-g0vlEYkF5McsaLyW11Y6FptjIMbnJqe6CSn1Yw7Zn8eMvqgTukj_0eVStlnuP97lJuZjeZtcmCHxS-JLykrlDlfhrKdkOEhK0Gu8pNa4DbCYc8ic6qFTmjafSM_y86KAUqC0RNmrIOxhSjsJ25OVZp3STb48EVxqp4SVsDsmdNJ0AyzVev1H_VEWhaLng");'
-            ></div>
-            <h2 class="text-[#181111] text-base font-bold leading-tight">Creativity</h2>
-          </div>
-          <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dcdc] bg-white p-4 items-center">
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfNxD1ArHDF8VQ46bHSbfLkUIaUq5vsAiY7srhDr_h7_6T6SWiSnK3LTP50tDfalQDosmO_DWnUCNPPb3ZaiDI_GTrUdZwk8PabTDWPT1UhFjXeP3ZusaSFmEeL0Nd_uGXQ0mphQnHsTlxON5N7Q3ezSkUSfYz6vRsOP762J8hxX_SfucPQjiQhEnwatVwLNM-fLBrj6e5gGucX5UZIPyJom3U2YKse0x-I5lafz7fNqM6jpKbC59D_YRu4n5FdltpydanPLXpbg");'
-            ></div>
-            <h2 class="text-[#181111] text-base font-bold leading-tight">Health</h2>
-          </div>
-          <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dcdc] bg-white p-4 items-center">
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD59Vj7uBjGYRN_wwjd8h-xRIaQMqg8fIFLan-pBZJCfAnLSxJf0a5yAXBNH0tsAd-EzsI740JA8-tb77NAlbHWwL5lwEUIW6-Cxaz1OxxkYEzBSAGX9peETduVdu_Lor188jZjLHtBgOpBW34nlM5Fyyxykdkuc1FigTG0TSk1qkg8CEUEvEYA8z-krz0b4QHVNIphS5w6aJwtBW7ylslc_fJZEdpqwXfWcqgaZhZo2lSQ-Gw4azyRcllo59UiEqvPoOKvlWnklw");'
-            ></div>
-            <h2 class="text-[#181111] text-base font-bold leading-tight">Travel</h2>
-          </div>
-          <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dcdc] bg-white p-4 items-center">
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlcE0QJOzMPtfCvVNtYdCAkYf1BXqNljIc4CD75tXm9AFjYmjE0x0u-VOc67seHmfZjzDoE1ohnk-Trau2_0aH6-T_c8p7sa9gtuIaRWa0S4WX-cupEPq9DbS5SInZp2gbTtcFrA0zgUSAUnbV9Ut936g7z1IkVo07dTo1NwIFphADkTwQs9mtuex9d6M7_7o3zK6VRCEpBobAXMTd20FXj4x-i6I7N-dKsUcRgf0nhYsSGmY5Hc50KauRubnJG_22svcFMoW6sA");'
-            ></div>
-            <h2 class="text-[#181111] text-base font-bold leading-tight">Lifestyle</h2>
-          </div>
-          <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dcdc] bg-white p-4 items-center">
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBH3_7iKdvy6GN-_eLPeP-8T5EZEaHtmMEeRC8239GFcaa3v2cspLmkk9klksPnVhTrtLnaWhg-Y4JIkNAL2MZvvw_MxDDHJYLrfl1Dh4lvVQPD5SN19KzWepadUihzOgGb_KO9V0pWa6Has9pWV01V5JjcTEiN99HAOsWiCyOyOVNKotS_PzdwIe3PQri_fFrzJn47tpUenDZu95iU2g6kwhm_EbMmvxgio1nwgqATTBXF-LdD8IR7Wb-x_WXEGz4jpcYf-fcbjw");'
-            ></div>
-            <h2 class="text-[#181111] text-base font-bold leading-tight">Social Media</h2>
-          </div>
-          <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dcdc] bg-white p-4 items-center">
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcCEPHi4WGMhPMLrLkE6IXe1kIujjgACXL7oTNdPFwOaAQvr3RK_axcJw2j_lXgGwCnefTLZOBbr6BdR0aRroaNzZAzbdcc5gBYB9n6cDC2XPEvS5ki01OStEGmnuIXhw0cagkIhHHLyMuZ2RbNC7LTwg4gaZG_LHI8LKrmdUaiCYzTJ-ioi6e8Xi7rpt_fnNuRDsdCEGrmVizsS7CvJW6g5aK-3C_U8He9PiFJzvL89SRd7t0nHwtMvt0O6zSIOR4vYCo73pqcA");'
-            ></div>
-            <h2 class="text-[#181111] text-base font-bold leading-tight">Spirituality</h2>
-          </div>
-          <div class="flex flex-1 gap-3 rounded-lg border border-[#e5dcdc] bg-white p-4 items-center">
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCAjx8yGBFBzFCJHRU094SyNz-kAcMi8FuJSNkVrx4UJ8mXIFKzZ_1hJEvVTSbMJv1XQEdMFBHHZsA-sByK3pnPRJUDtvnRE9xFM23uvjALCw6uwLVej59vIbjLkKG4UiwqXBhbOfkP53da_ilWSrV-QRaNRA00D0ys-Chs9TmTSa5b-y1k7HbjsagHkCJYsMOzYobRYMlQ-AHkzKaj3aO_MeeFXm7L0ocCzGxgPXDdZi3YB_3JVygf2NnyvrHQL762xTtU4VoHaA");'
-            ></div>
-            <h2 class="text-[#181111] text-base font-bold leading-tight">Finance</h2>
-          </div>
+
+        <!-- Categorias -->
+        <h2 class="text-[#181111] text-xl sm:text-2xl font-bold leading-tight tracking-[-0.015em] px-4 pt-4 pb-2">
+          Categorias
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 px-4 pb-6">
+          <!-- Exemplo de categoria -->
+          <div class="bg-gray-100 rounded-lg p-4 text-center">Categoria 1</div>
+          <div class="bg-gray-100 rounded-lg p-4 text-center">Categoria 2</div>
+          <div class="bg-gray-100 rounded-lg p-4 text-center">Categoria 3</div>
+          <div class="bg-gray-100 rounded-lg p-4 text-center">Categoria 4</div>
         </div>
       </div>
-      <div><div class="h-5 bg-white"></div></div>
+
+      <footer class="h-5 bg-white"></footer>
     </div>
   </body>
 </html>
